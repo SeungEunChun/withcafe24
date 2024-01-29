@@ -2,7 +2,7 @@
   "name": "devchun",
   "version": "1.0.0",
   "homepage": ".",
-  "description": "\"천승은 개인작업 노드\"",
+  "description": "천승은 개인작업 노드",
   "main": "web.js",
   "scripts": {
     "server": "node ./web.js",
@@ -13,9 +13,9 @@
     "url": "andychun96@chundev.cafe24app.com:andychun96_chundev"
   },
   "keywords": [
-    "\"react",
+    "react",
     "nodejs",
-    "sql\""
+    "sql"
   ],
   "author": "SeungEunChun",
   "license": "ISC",

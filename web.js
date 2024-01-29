@@ -11,3 +11,7 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, "publish/nopage.html"))
 })
+
+app.listen(6118, () => {
+    console.log(`localhost ${port} onload`)
+})

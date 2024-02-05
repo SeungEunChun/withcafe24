@@ -6,7 +6,7 @@ const store = require('./api/store')
 
 app.use(express.static(path.join(__dirname, 'scinic/build')))
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "build/index.html"))
+    res.sendFile(path.join(__dirname, "scinic/build/index.html"))
 })
 
 app.use('/store', store)

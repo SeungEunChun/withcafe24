@@ -63,16 +63,16 @@ function Header() {
                 <div id="Gnb" ref={Gnbmenu} className='text-center container-lg mt-lg-5 d-lg-block d-none'>
                     <ul className='d-lg-flex justify-content-center'>
 
-                        <li className='px-4 storelist '><Link to="/store?tablenm=Scinic_Product">스토어</Link>
+                        <li className='px-4 storelist '><Link to="/store/all">스토어</Link>
                             <div className='d1li start-0 end-0 position-absolute bg-white'>
                                 <div id='storelist' className='d-flex mx-auto justify-content-between col-xxl-4 col-sm-8 colpx'>
                                     <ul className='d2li'>
-                                        <li><Link to="/store?tablenm=Scinic_Product">전체상품</Link></li>
-                                        <li><Link>토너</Link></li>
-                                        <li><Link>에센스</Link></li>
-                                        <li><Link>로션</Link></li>
-                                        <li><Link>맨즈케어</Link></li>
-                                        <li><Link>클렌징</Link></li>
+                                        <li><Link to="/store/all">전체상품</Link></li>
+                                        <li><Link to="/store/0">토너</Link></li>
+                                        <li><Link to="/store/1">에센스</Link></li>
+                                        <li><Link to="/store/2">로션</Link></li>
+                                        <li><Link to="/store/3">맨즈케어</Link></li>
+                                        <li><Link to="/store/4">클렌징</Link></li>
                                     </ul>
                                     <div className='bimg'>
                                         <img src="https://i.ibb.co/dcdwnk1/2.webp" alt="2depthimg" />

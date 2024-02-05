@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
 
 function Store() {
     const [totalpro, settotal] = useState([]);
+    const { Category_no } = useParams();
+    const setCategory = Category_no === "all" ? "" : Category_no
 
 
     useEffect(() => {
-        const dbstore = async () => {
-            axios.post('/store?tablenm=Scinic_Product', {
+        const dbstore = async () => {//  /store/Scinic_Product/0
+            axios.post(`/store/Scinic_Product/${setCategory}`, {
                 Headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                param: ""
             }).then((result) => {
                 settotal([...result.data])
             }).catch((error) => {
@@ -20,7 +24,8 @@ function Store() {
 
         }
         dbstore();
-    }, []);
+        console.log(Category_no)
+    }, [setCategory]);
     return (
         <section className='mt-10'>
             <div className='row container mx-auto text-center mt-5'>

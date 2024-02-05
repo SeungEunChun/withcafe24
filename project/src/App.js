@@ -49,7 +49,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/brand" element={<Brandstory />}></Route>
         <Route path='/promotion' element={<Promotion />}></Route>
-        <Route path='/store' element={<Store />}></Route>
+        <Route path='/store/:Category_no' element={<Store />}></Route>
 
       </Routes>
       <Footer></Footer>

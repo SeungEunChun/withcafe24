@@ -22,7 +22,7 @@ function Store() {
         dbstore();
     }, []);
     return (
-        <section className='mt-5'>
+        <section className='mt-10'>
             <div className='row container mx-auto text-center mt-5'>
 
                 <div div className='mb-5 border-bottom' >

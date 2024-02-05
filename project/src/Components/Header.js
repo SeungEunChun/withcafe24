@@ -67,7 +67,7 @@ function Header() {
                             <div className='d1li start-0 end-0 position-absolute bg-white'>
                                 <div id='storelist' className='d-flex mx-auto justify-content-between col-xxl-4 col-sm-8 colpx'>
                                     <ul className='d2li'>
-                                        <li><Link>전체상품</Link></li>
+                                        <li><Link to="/store?tablenm=Scinic_Product">전체상품</Link></li>
                                         <li><Link>토너</Link></li>
                                         <li><Link>에센스</Link></li>
                                         <li><Link>로션</Link></li>

@@ -25,7 +25,7 @@ function Store() {
         }
         dbstore();
         console.log(Category_no)
-    }, [setCategory]);
+    }, [Category_no, setCategory]);
     return (
         <section className='mt-10'>
             <div className='row container mx-auto text-center mt-5'>

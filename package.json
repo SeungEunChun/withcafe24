@@ -6,7 +6,9 @@
   "main": "web.js",
   "scripts": {
     "server": "node ./web.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run react\"",
+    "react": "cd scinic && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "author": "SeungEunChun",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^8.2.2",
     "express": "^4.18.2",
     "figlet": "^1.7.0",
     "mysql": "^2.18.1",

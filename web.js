@@ -4,7 +4,7 @@ const port = 8001;
 const path = require("path");
 const store = require('./api/store')
 
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'scinic/build')))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "build/index.html"))
 })

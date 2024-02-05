@@ -38,10 +38,6 @@ ul {
     }
 }
 
-.mt-10 {
-    margin-top: 300px;
-}
-
 h1,
 h2,
 h3,
@@ -241,16 +237,18 @@ p {
 }
 
 
+.mli {
+    max-width: 310px !important;
+    max-height: 420px !important;
 
-.re_box {
-    margin-bottom: 30px;
-
-    @media (max-width:576px) {
-        width: 310px !important;
-
+    img {
+        margin-top: 10px;
     }
 }
 
+.re_info {
+    max-width: 310px;
+}
 
 
 #player {

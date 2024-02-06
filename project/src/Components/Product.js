@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function Product(props) {
-    const tabname = Object.keys(props.datasrc['Category'][0]);
+    const tabname = props.catesrc; // 향후 카테고리의 갯수만큼 필터링하게 수정 예정
+    // const tabname = Object.keys(props.datasrc['Category'][0]);
     const [inter, setInter] = useState(0);
     const [isActive, setIsActive] = useState(true);
     const tabrole = useRef(0);
@@ -55,24 +56,24 @@ function Product(props) {
                         tabname.map((e, i) => {
                             return (
                                 <li key={i} onClick={() => { tabrole.current = i; setInter(tabrole.current) }} className={`${tabrole.current === i ? "on" : ""
-                                    }`}>{e}</li>
+                                    }`}>{e.Cate_title}</li>
                             )
                         })
                     }
                 </ul>
 
                 {
-                    props.datasrc['Category'][0][tabname[inter]].map((e, i) => {
+                    props.datasrc.filter(bestpro => bestpro.Category_no === tabrole.current).slice(0, 4).map((e, i) => {
                         return (
                             <div className='col-lg-3 col-md-6 mb-5 pb-4 text-center'>
                                 <Link className='d-block'>
-                                    <img src={`./assets/product/${e.img}`} alt={`상품${i}`} className='img-fluid' />
+                                    <img src={e.img} alt={`상품${i}`} className='img-fluid' />
                                 </Link>
 
 
                                 <strong>{e.title}</strong>
                                 <br />
-                                <p>{e.prodesc}</p>
+                                <p>{e.descpro}</p>
                                 <span>{e.price} 원</span>
                             </div>
                         )

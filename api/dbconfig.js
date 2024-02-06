@@ -9,7 +9,7 @@ const mysqlapi = express.Router();
 
 const myconnection = mysql.createPool(mydbinfo)
 
-mysqlapi.post('/:tablenm', (req, res) => {
+mysqlapi.get('/:tablenm', (req, res) => {
     const tablenm = req.params.tablenm
 
 
@@ -25,7 +25,7 @@ mysqlapi.post('/:tablenm', (req, res) => {
 })
 
 
-mysqlapi.post('/:tablenm/:Category_no', (req, res) => {
+mysqlapi.get('/:tablenm/:Category_no', (req, res) => {
     const tablenm = req.params.tablenm
     const Category_no = req.params.Category_no
     const wheretable = ` where Category_no = ${Category_no}`

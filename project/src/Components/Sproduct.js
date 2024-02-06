@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 function Sproduct(props) {
 
-    const bestpro = Object.keys(props.datasrc['Category'][0])
+    // const bestpro = Object.keys(props.datasrc['Category'][0])
 
 
-    console.log(bestpro.length)
+    // console.log(bestpro.length)
 
 
     return (
@@ -17,25 +17,25 @@ function Sproduct(props) {
             </div>
             <div className='container row mx-auto mt-5'>
                 {
-                    bestpro.map((el, idx) => (
-                        props.datasrc['Category'][0][el].filter(bestpro => bestpro.quantity > 88).map((e, i) => {
-                            return (
-                                <div key={i} className='col-lg-3 col-md-6 mb-5 pb-4 text-center'>
-                                    <Link className='d-block'>
-                                        <img src={`./assets/product/${e.img}`} alt="" className='img-fluid mb-3' />
-                                    </Link>
 
-                                    <strong>{e.title}</strong>
-                                    <br />
-                                    <p>{e.prodesc}</p>
-                                    <span>{e.price}원</span>
-                                    <br />
-                                    <span>판매량 : {e.quantity}</span>
+                    props.datasrc.filter(bestpro => bestpro.quantity > 88).slice(0, 4).map((e, i) => {
+                        return (
+                            <div key={i} className='col-lg-3 col-md-6 mb-5 pb-4 text-center'>
+                                <Link className='d-block'>
+                                    <img src={e.img} alt="" className='img-fluid mb-3' />
+                                </Link>
 
-                                </div>
-                            )
-                        })
-                    ))
+                                <strong>{e.title}</strong>
+                                <br />
+                                <p>{e.descpro}</p>
+                                <span>{e.price}원</span>
+                                <br />
+                                <span>판매량 : {e.quantity}</span>
+
+                            </div>
+                        )
+                    })
+
                 }
 
 

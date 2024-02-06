@@ -63,7 +63,7 @@ function Product(props) {
                 </ul>
 
                 {
-                    props.datasrc.filter(bestpro => bestpro.Category_no === tabrole.current).slice(0, 4).map((e, i) => {
+                    props.datasrc.filter(bestpro => bestpro.Category_no === tabrole.current).slice(0, 10).map((e, i) => {
                         return (
                             <div className='col-lg-3 col-md-6 mb-5 pb-4 text-center'>
                                 <Link className='d-block'>

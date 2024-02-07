@@ -7,7 +7,7 @@ function Form() {
         try {
             if (data) {
 
-                const response = await axios.post(`/data/${myName}`, {
+                const response = await axios.post(`/promotion/${myName}`, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -21,7 +21,7 @@ function Form() {
                 const responseData = await response.json(); // Assuming the response is JSON, adjust as necessary
                 return responseData;
             } else {
-                return axios.get(`/data/${myName}`);
+                return axios.get(`/promotion/${myName}`);
             }
 
         } catch (error) {
@@ -69,7 +69,7 @@ function Form() {
 
     return (
 
-        <form className='myForm' onSubmit={(e) => { buttonClick(e) }} style={{ marginTop: "300px" }}>
+        <form className='myForm' onSubmit={(e) => { buttonClick(e) }} style={{ marginTop: "300px", width: "800px" }}>
             <div className='myFormDiv w-md-3'>
                 <h5 className='text-center mb-5'>싸이닉 제품 체험단을 모집합니다!</h5>
                 <div>

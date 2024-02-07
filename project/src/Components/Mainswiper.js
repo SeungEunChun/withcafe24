@@ -1,6 +1,8 @@
 // Import Swiper React components
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import axios from 'axios';
 
 
 
@@ -11,6 +13,16 @@ import 'swiper/css/navigation';
 
 const Mains = (props) => {
 
+    const [conswipe, setswipe] = useState([]);
+    const swipeapi = async () => {
+        const result = await axios.get(`/store/mainbanner`)
+        setswipe([...result.data])
+    }
+
+    useEffect(() => {
+        swipeapi();
+        console.log(conswipe)
+    }, [])
 
 
 

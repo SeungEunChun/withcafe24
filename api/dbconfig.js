@@ -42,4 +42,6 @@ mysqlapi.get('/:tablenm/:Category_no', (req, res) => {
 })
 
 
+
+
 module.exports = mysqlapi;

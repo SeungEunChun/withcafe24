@@ -3,6 +3,7 @@ const app = express();
 const port = 8001;
 const path = require("path");
 const mysqlapi = require('./api/dbconfig')
+const formtag = require('./api/form')
 
 app.use(express.static(path.join(__dirname, './project/build')))
 app.get('/', (req, res) => {
@@ -10,6 +11,10 @@ app.get('/', (req, res) => {
 })
 
 app.use('/store', mysqlapi)
+
+app.use('/promotion', formtag)
+
+
 
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, "publish/nopage.html"))

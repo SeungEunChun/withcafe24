@@ -13,7 +13,7 @@ import menuicon from '../img/icon/icon_menu.svg'
 
 
 
-function Header() {
+function Header(props) {
     const Gnbmenu = useRef("");
     const menucon = () => {
         Gnbmenu.current.classList.toggle("d-none")
@@ -68,11 +68,11 @@ function Header() {
                                 <div id='storelist' className='d-flex mx-auto justify-content-between col-xxl-4 col-sm-8 colpx'>
                                     <ul className='d2li'>
                                         <li><Link to="/store/all">전체상품</Link></li>
-                                        <li><Link to="/store/0">토너</Link></li>
-                                        <li><Link to="/store/1">에센스</Link></li>
-                                        <li><Link to="/store/2">로션</Link></li>
-                                        <li><Link to="/store/3">맨즈케어</Link></li>
-                                        <li><Link to="/store/4">클렌징</Link></li>
+                                        {
+                                            props.datasrc.map((e, i) => {
+                                                return <li key={i}><Link to={`/store/${e.Category_no}`}>{e.Cate_title}</Link></li>
+                                            })
+                                        }
                                     </ul>
                                     <div className='bimg'>
                                         <img src="https://i.ibb.co/dcdwnk1/2.webp" alt="2depthimg" />

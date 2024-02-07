@@ -91,7 +91,7 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header datasrc={catepro && catepro}></Header>
       <Routes>
         <Route path="/" element={<section className='mainsec'>
           <Mainswiper datasrc={Mainswipe.mainbanner}></Mainswiper>
@@ -110,7 +110,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/brand" element={<Brandstory />}></Route>
         <Route path='/promotion' element={<Promotion />}></Route>
-        <Route path='/store/:Category_no' element={<Store datasrc={totalpro && totalpro} />}></Route>
+        <Route path='/store/:Category_no' element={<Store datasrc={totalpro && totalpro} catesrc={catepro && catepro} />}></Route>
 
       </Routes>
       <Footer></Footer>

@@ -11,17 +11,27 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const Mains = (props) => {
+const Mains = () => {
 
     const [conswipe, setswipe] = useState([]);
     const swipeapi = async () => {
-        const result = await axios.get(`/store/mainbanner`)
-        setswipe([...result.data])
+        try {
+            const result = await axios.get('/store/Mbanner', {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            setswipe([...result.data])
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     useEffect(() => {
         swipeapi();
         console.log(conswipe)
+
     }, [])
 
 
@@ -41,13 +51,15 @@ const Mains = (props) => {
             autoplay={{
                 delay: 3000
             }}
+            slidesPerView={1}
+            slidesPerGroup={1}
             className='mt-lg-5'>
             {
-                props.datasrc.map((e, i) => {
+                conswipe.map((e, i) => {
                     return (
-                        <SwiperSlide className='swipermobile' key={i}>
-                            <img src={`./assets/swiperimg/${e.pcimgslide}`} alt={e.alt} className='d-none d-lg-block img-fluid' />
-                            <img src={`./assets/swiperimg/${e.mimgslide}`} alt={e.alt} className='d-lg-none w-100' />
+                        <SwiperSlide className='swipermobile' key={`mainbanner${i}`}>
+                            <img src={e.pcbanner} alt={e.alt} className='d-none d-lg-block img-fluid' />
+                            <img src={e.mobanner} alt={e.alt} className='d-lg-none w-100' />
 
                         </SwiperSlide>
                     )

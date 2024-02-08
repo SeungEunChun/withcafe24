@@ -21,7 +21,9 @@ const Mains = () => {
                     'Content-Type': 'application/json'
                 }
             })
+
             setswipe([...result.data])
+            console.log(result.data)
         } catch (error) {
             console.log(error)
         }
@@ -30,7 +32,7 @@ const Mains = () => {
 
     useEffect(() => {
         swipeapi();
-        console.log(conswipe)
+        console.log(conswipe.length);
 
     }, [])
 
@@ -62,6 +64,7 @@ const Mains = () => {
                             <img src={e.mobanner} alt={e.alt} className='d-lg-none w-100' />
 
                         </SwiperSlide>
+
                     )
                 })
             }
@@ -70,4 +73,4 @@ const Mains = () => {
     );
 };
 
-export default Mains
+export default Mains    

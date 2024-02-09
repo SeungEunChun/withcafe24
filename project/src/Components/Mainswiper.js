@@ -16,11 +16,7 @@ const Mains = () => {
     const [conswipe, setswipe] = useState([]);
     const swipeapi = async () => {
         try {
-            const result = await axios.get('/store/Mbanner', {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+            const result = await axios.get('/store/Mbanner')
 
             setswipe([...result.data])
             console.log(result.data)
@@ -30,9 +26,10 @@ const Mains = () => {
 
     }
 
+
     useEffect(() => {
         swipeapi();
-        console.log(conswipe.length);
+        console.log(conswipe, conswipe.length);
 
     }, [])
 
@@ -53,8 +50,7 @@ const Mains = () => {
             autoplay={{
                 delay: 3000
             }}
-            slidesPerView={1}
-            slidesPerGroup={1}
+
             className='mt-lg-5'>
             {
                 conswipe.map((e, i) => {

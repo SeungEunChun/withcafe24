@@ -35,16 +35,16 @@ function App() {
 
   useEffect(() => {
     const fetchcookie = async () => {
-      const savetotal = Cookies.get(totalpro);
-      const savecate = Cookies.get(catepro);
+      const savetotal = Cookies.get('totalpro');
+      const savecate = Cookies.get('catepro');
       if (savetotal && savecate) {
         settotal(JSON.parse(savetotal));
         setcate(JSON.parse(savecate));
       } else {
         await dbstore("store", "Scinic_Product");
         await category_no();
-        Cookies.set(totalpro, JSON.stringify(totalpro), { expires: 10 })
-        Cookies.set(catepro, JSON.stringify(catepro), { expires: 10 })
+        Cookies.set('totalpro', JSON.stringify(totalpro), { expires: 10 })
+        Cookies.set('catepro', JSON.stringify(catepro), { expires: 10 })
       }
 
     }

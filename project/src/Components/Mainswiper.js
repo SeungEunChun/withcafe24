@@ -53,7 +53,7 @@ const Mains = () => {
 
             className='mt-lg-5'>
             {
-                conswipe.map((e, i) => {
+                conswipe && conswipe.map((e, i) => {
                     return (
                         <SwiperSlide className='swipermobile' key={`mainbanner${i}`}>
                             <img src={e.pcbanner} alt={e.alt} className='d-none d-lg-block img-fluid' />

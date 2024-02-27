@@ -10,8 +10,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./project/build/index.html"))
 })
 
+//상품출력 라우터
 app.use('/store', mysqlapi)
 
+//폼데이터 라우터
 app.use('/form', formtag)
 
 

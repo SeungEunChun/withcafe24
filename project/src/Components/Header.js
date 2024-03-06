@@ -115,9 +115,9 @@ function Header(props) {
                     <div className=''>
                         <ul id='Login' className='d-flex position-absolute align-items-center justify-content-center justify-content-lg-end'>
                             <li><Link to="/login">Login</Link></li>
-                            <li className='ms-lg-2'><a href="#none">My</a></li>
-                            <li className='ms-lg-2'><a href="#none"><img src={carticon} alt="장바구니" /></a></li>
-                            <li className='ms-lg-2 searchicon' onClick={showsearch}><a href="#none" ><img src={searchicon} alt="검색" /></a></li>
+                            <li className='ms-2'><a href="#none">My</a></li>
+                            <li className='ms-2'><a href="#none"><img src={carticon} alt="장바구니" /></a></li>
+                            <li className='ms-2 searchicon' onClick={showsearch}><a href="#none" ><img src={searchicon} alt="검색" /></a></li>
                         </ul>
                     </div>
 

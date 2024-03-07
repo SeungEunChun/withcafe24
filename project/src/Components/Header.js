@@ -28,7 +28,8 @@ function Header(props) {
     const scrolldown = () => {
         document.querySelector("#hd").classList = window.scrollY > 0 ? "fixed-top bg-white border-bottom down" : "fixed-top bg-white border-bottom";
 
-        document.body.classList = window.scrollY > 0 ? "down" : "";
+
+        // document.body.classList = window.scrollY > 0 ? "down " : "";
     }
 
     const scrollToTop = () => {

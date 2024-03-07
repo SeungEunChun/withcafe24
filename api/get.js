@@ -38,7 +38,7 @@ mysqlapi.get('/:tablenm/:Category_no', (req, res) => {
     const wheretable = `where 
     id=${Category_no}`
 
-    myconnection.getConnection((err, connect) => {
+    myconnection.getConnection((err, connect) => { //카테고리 pk로 정보에 접근
         if (err) throw console.log("DB접속정보확인 " + err)
         connect.query(`select * from ${tablenm} ${wheretable}`, (error, result) => {
             if (error) throw console.log("쿼리문 오류" + error)
@@ -50,7 +50,7 @@ mysqlapi.get('/:tablenm/:Category_no', (req, res) => {
     })
 })
 
-mysqlapi.get('/:tablenm/search?id=', (req, res) => {
+mysqlapi.get('/:tablenm/:id', (req, res) => { //제품 상세페이지  //
     const tablenm = req.params.tablenm;
     const idnum = req.params.id;
     const wherenum = `where id=${idnum}`

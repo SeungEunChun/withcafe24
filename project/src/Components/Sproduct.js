@@ -18,10 +18,10 @@ function Sproduct(props) {
             <div className='container row mx-auto mt-5'>
                 {
 
-props.datasrc &&   props.datasrc.filter(bestpro => bestpro.quantity > 88).slice(0, 4).map((e, i) => {
+                    props.datasrc && props.datasrc.filter(bestpro => bestpro.quantity > 88).slice(0, 4).map((e, i) => {
                         return (
                             <div key={i} className='col-lg-3 col-md-6 mb-5 pb-4 text-center'>
-                                <Link className='d-block'>
+                                <Link to={`/detail/${e.id}`} className='d-block'>
                                     <img src={e.img} alt="" className='img-fluid mb-3' />
                                 </Link>
 

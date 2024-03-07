@@ -38,7 +38,10 @@ function Store(props) {
                 </ul>
                 {datasrc && Category_no !== "all" ? datasrc.filter((element) => element.Category_no == Category_no).map((e, i) => (
                     <div className='col-lg-3 col-md-6 mb-5 pb-4 text-center' key={i}>
-                        <img src={e.img} className='img-fluid' alt={`product${i}`} />
+                        <Link to={`/detail/${e.id}`}>
+                            <img src={e.img} className='img-fluid' alt={`product${i}`} />
+                        </Link>
+
                         <strong>{e.title}</strong>
                         <br />
                         <p>{e.descpro}</p>
@@ -50,7 +53,9 @@ function Store(props) {
                     :
                     datasrc && datasrc.map((e, i) => (
                         <div className='col-lg-3 col-md-6 mb-5 pb-4 text-center' key={i}>
-                            <img src={e.img} className='img-fluid' alt={`product${i}`} />
+                            <Link to={`/detail/${e.id}`}>
+                                <img src={e.img} className='img-fluid' alt={`product${i}`} />
+                            </Link>
                             <strong>{e.title}</strong>
                             <br />
                             <p>{e.descpro}</p>

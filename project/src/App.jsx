@@ -20,6 +20,7 @@ import Login from "./Link/Login";
 import Brandstory from "./Link/brandstory";
 import Store from './Link/Store';
 import Search from './Components/Search'
+import Prodetail from "./Components/prodetail";
 
 
 
@@ -85,6 +86,9 @@ function App() {
         <Route path="/brand" element={<Brandstory />}></Route>
         <Route path='/promotion' element={<Promotion />}></Route>
         <Route path='/store/:Category_no' element={<Store datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} catesrc={totalpro && totalpro['Category'] && totalpro['Category']} />}></Route>
+        <Route path='/detail/:id' element={<Prodetail datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} />}>
+
+        </Route>
 
       </Routes>
 

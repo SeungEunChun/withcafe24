@@ -71,7 +71,7 @@ function Product(props) {
                     props.datasrc && props.datasrc.filter(bestpro => bestpro.Category_no === tabrole.current).slice(0, more).map((e, i) => {
                         return (
                             <div className='col-lg-3 col-md-6 mb-3 pb-4 text-center'>
-                                <Link className='d-block'>
+                                <Link to={`/detail/${e.id}`} className='d-block'>
                                     <img src={e.img} alt={`상품${i}`} className='img-fluid' />
                                 </Link>
 

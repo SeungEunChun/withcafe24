@@ -19,7 +19,7 @@ import Footer from "./Components/Footer";
 import Login from "./Link/Login";
 import Brandstory from "./Link/brandstory";
 import Store from './Link/Store';
-import Search from './Components/Search'
+import SearchForm from './Components/SearchForm'
 import Prodetail from "./Components/prodetail";
 
 
@@ -66,7 +66,7 @@ function App() {
   return (
     <>
       <Header datasrc={totalpro && totalpro['Category'] && totalpro['Category']}></Header>
-      <Search></Search>
+      <SearchForm />
       <Routes>
         <Route path="/" element={<section className='mainsec'>
           <Mainswiper></Mainswiper>

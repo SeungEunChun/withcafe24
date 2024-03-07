@@ -1,6 +1,6 @@
 import dsearchicon from '../img/icon/icon_dsearch.svg'
 import dcloseicon from '../img/icon/icon_dclose.svg'
-function Search() {
+function SearchForm() {
     const handleClick = () => {
         document.body.classList.remove("dim")
     }
@@ -27,4 +27,4 @@ function Search() {
     )
 }
 
-export default Search;
+export default SearchForm;

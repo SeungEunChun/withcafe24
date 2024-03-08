@@ -32,11 +32,11 @@ mysqlapi.get('/:tablenm', (req, res) => {
 
 
 //요청주소 /store/
-mysqlapi.get('/:tablenm/:Category_no', (req, res) => {
+mysqlapi.get('/:tablenm/:num', (req, res) => {
     const tablenm = req.params.tablenm
-    const Category_no = req.params.Category_no
+    const category_no = req.params.num
     const wheretable = `where 
-    id=${Category_no}`
+    id=${category_no}`
 
     myconnection.getConnection((err, connect) => { //카테고리 pk로 정보에 접근
         if (err) throw console.log("DB접속정보확인 " + err)
@@ -65,6 +65,9 @@ mysqlapi.get('/:tablenm/:id', (req, res) => { //제품 상세페이지  //
         })
     })
 })
+
+
+
 
 
 

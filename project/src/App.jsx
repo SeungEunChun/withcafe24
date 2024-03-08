@@ -21,7 +21,7 @@ import Brandstory from "./Link/brandstory";
 import Store from './Link/Store';
 import SearchForm from './Components/SearchForm'
 import Prodetail from "./Components/prodetail";
-
+import Result from "./Components/Result";
 
 
 import review from './data/review.json'
@@ -66,7 +66,7 @@ function App() {
   return (
     <>
       <Header datasrc={totalpro && totalpro['Category'] && totalpro['Category']}></Header>
-      <SearchForm />
+      <SearchForm datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} />
       <Routes>
         <Route path="/" element={<section className='mainsec'>
           <Mainswiper></Mainswiper>
@@ -89,6 +89,7 @@ function App() {
         <Route path='/detail/:id' element={<Prodetail datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} />}>
 
         </Route>
+        <Route path="/result/s/:keyword" element={<Result />}></Route>
 
       </Routes>
 

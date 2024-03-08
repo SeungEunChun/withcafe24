@@ -4,14 +4,19 @@ const port = 8001;
 const path = require("path");
 const mysqlapi = require('./api/get')
 const formtag = require('./api/post')
+const searchapi = require('./api/search')
+
 
 app.use(express.static(path.join(__dirname, './project/build')))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./project/build/index.html"))
 })
 
+
 //상품출력 라우터
 app.use('/store', mysqlapi)
+
+app.use('/result', searchapi)
 
 //폼데이터 라우터
 app.use('/form', formtag)
@@ -21,6 +26,8 @@ app.use('/form', formtag)
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, "publish/nopage.html"))
 })
+
+
 
 app.listen(port, () => {
     console.log(`localhost ${port} onload`)

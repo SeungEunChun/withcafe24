@@ -17,7 +17,7 @@ function Store(props) {
     useEffect(() => {
         console.log(typeof Category_no, Category_no)
         console.log(props.catesrc, typeof props.catesrc)
-    }, [Category_no, datasrc, catesrc]);
+    }, [Category_no, props]);
 
     return (
         <section className='storesec'>

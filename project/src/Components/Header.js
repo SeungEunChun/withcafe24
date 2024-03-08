@@ -80,7 +80,7 @@ function Header(props) {
     return (
         <header id='hd' className='fixed-top bg-white border-bottom'>
             <div className='container row mx-auto justify-content-between justify-content-lg-center align-items-center mobile'>
-                <h1 id='Logo' className='text-center align-item-center mb-0 mt-lg-5 p-0'><Link to="/"></Link></h1>
+                <h1 id='Logo' className='text-center align-item-center mb-0 mt-lg-5 p-0'><a href='/'></a></h1>
 
 
                 <i id='menuicon' className='d-lg-none d-flex p-0'></i>

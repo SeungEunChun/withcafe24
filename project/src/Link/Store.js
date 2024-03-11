@@ -26,14 +26,14 @@ function Store(props) {
             <div className='row container mx-auto text-center mt-5'>
 
                 <div className='mb-5 border-bottom'>
-                    <h2>{Category_no !== "all" ? props.catesrc.filter((el) => parseInt(el.id) == Category_no)[0].Cate_title : "전체상품"}</h2>
+                    <h2>{Category_no !== "all" ? props.catesrc && props.catesrc.filter((el) => parseInt(el.id) == Category_no)[0].Cate_title : "전체상품"}</h2>
                 </div>
                 <ul className='d-lg-flex justify-content-start storeul mb-5'>
-                    <li className='mx-2 mb-3'><Link to="/store/all">전체상품</Link></li>
+                    <li className='mx-2 mb-3'><Link to="/product/all">전체상품</Link></li>
                     {
                         props.catesrc && props.catesrc.map((e, i) => {
                             return (
-                                <li className='mx-2 mb-3'><Link to={`/store/${e.id}`}>{e.Cate_title}</Link></li>
+                                <li className='mx-2 mb-3'><Link to={`/product/${e.id}`}>{e.Cate_title}</Link></li>
                             )
                         })
                     }

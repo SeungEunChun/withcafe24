@@ -85,16 +85,16 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/brand" element={<Brandstory />}></Route>
         <Route path='/promotion' element={<Promotion />}></Route>
-        <Route path='/store/:Category_no' element={<Store datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} catesrc={totalpro && totalpro['Category'] && totalpro['Category']} />}></Route>
+        <Route path='/product/:Category_no' element={<Store datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} catesrc={totalpro && totalpro['Category'] && totalpro['Category']} />}></Route>
         <Route path='/detail/:id' element={<Prodetail datasrc={totalpro && totalpro['Scinic_Product'] && totalpro['Scinic_Product']} />}>
 
         </Route>
         <Route path="/result/s/:keyword" element={<Result />}></Route>
         {/* 주소 경로가 매치되지 않는경우 404페이지 반환 */}
-        <Route path="*" element={"../../publish/nopage.html"} />
+        {/* <Route path="*" element={"../../publish/nopage.html"} /> */}
 
         {/* /store 뒤에 인자를 지속적으로 확인하여 json으로 페이지가 보여지는것을 막음   //아직 안됨 */}
-        <Route path="/store/*" element={<StoreRedirect />} />
+        {/* <Route path="/product/*" element={<StoreRedirect />} /> */}
       </Routes>
 
       <Footer></Footer>

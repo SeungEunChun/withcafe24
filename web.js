@@ -18,7 +18,7 @@ app.use('/form', formtag)
 app.use(express.static(path.join(__dirname, './project/build')))
 app.get('*', (req, res, next) => {
     // API 경로로 시작하는 요청을 제외합니다.
-    if (req.url.startsWith('/store') || req.url.startsWith('/result') || req.url.startsWith('/form')) {
+    if (req.url.startsWith('/store') || req.url.startsWith('/result/s/:keyword') || req.url.startsWith('/form')) {
         next(); // 다음 미들웨어(여기서는 404 처리 미들웨어)로 요청을 전달합니다.
     } else {
         // 클라이언트 측 라우팅을 처리할 수 있도록 index.html을 반환합니다.

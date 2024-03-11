@@ -41,7 +41,7 @@ function Result() {
 
         <section className='storesec'>
             <div className='row container mx-auto text-center mt-5'>
-                <h1>검색결과 : 총 {remsearch.length}</h1>
+                <h1>검색결과 : 총 {remsearch.length} 건</h1>
 
                 {remsearch.map((e, i) => {
                     return (

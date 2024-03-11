@@ -89,14 +89,14 @@ function Header(props) {
                 <div id="Gnb" className='text-center container-lg mt-lg-5 d-lg-block d-none'>
                     <ul className='d-lg-flex justify-content-center'>
 
-                        <li className='px-4 storelist '><Link to="/store/all">스토어</Link>
+                        <li className='px-4 storelist '><Link to="/product/all">스토어</Link>
                             <div className='d1li start-0 end-0 position-absolute bg-white'>
                                 <div id='storelist' className='d-flex mx-auto justify-content-between col-xxl-4 col-sm-8 colpx'>
                                     <ul className='d2li'>
-                                        <li><Link to="/store/all">전체상품</Link></li>
+                                        <li><Link to="/product/all">전체상품</Link></li>
                                         {
                                             props.datasrc && props.datasrc.map((e, i) => {
-                                                return <li key={i}><Link to={`/store/${e.id}`}>{e.Cate_title}</Link></li>
+                                                return <li key={i}><Link to={`/product/${e.id}`}>{e.Cate_title}</Link></li>
                                             })
                                         }
                                     </ul>

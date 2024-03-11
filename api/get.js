@@ -14,13 +14,26 @@ const myconnection = mysql.createPool(mydbinfo)
 //글목록보기
 //리액트에서 요청하는 주소의 형태는 서버/store/테이블명
 mysqlapi.get('/:tablenm', (req, res) => {
-    const tablenm = req.params.tablenm;
+    const tablenm = req.params.tablenm; //0,1,~~~,all,Scinic_Product,Category
+    const sqltable = parseInt(tablenm);
+
+
+    let tablenmparam;
+    if (!isNaN(sqltable)) {
+        tablenmparam = `Scinic_Product where Category_no = '${sqltable}'`;
+    } else {
+        if (tablenm == 'all') {
+            tablenmparam = `Scinic_Product`;
+        } else {
+            tablenmparam = tablenm;
+        }
+    }
 
 
     // const wheretable = p_id !== "" ? ` where p_id =${p_id}` : null
     myconnection.getConnection((err, connect) => {
         if (err) throw console.log("DB접속정보확인 " + err)
-        connect.query(`select * from ${tablenm}`, (error, result) => {
+        connect.query(`select * from ${tablenmparam}`, (error, result) => {
             if (error) throw console.log("첫번째 쿼리문 오류" + error)
             res.send(result);
             console.log(result);

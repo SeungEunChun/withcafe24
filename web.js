@@ -6,13 +6,6 @@ const mysqlapi = require('./api/get')
 const formtag = require('./api/post')
 const searchapi = require('./api/search')
 
-
-app.use(express.static(path.join(__dirname, './project/build')))
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "./project/build/index.html"))
-})
-
-
 //상품출력 라우터
 app.use('/store', mysqlapi)
 
@@ -22,16 +15,35 @@ app.use('/result', searchapi)
 app.use('/form', formtag)
 
 
+app.use(express.static(path.join(__dirname, './project/build')))
+app.get('*', (req, res, next) => {
+    // API 경로로 시작하는 요청을 제외합니다.
+    if (req.url.startsWith('/store') || req.url.startsWith('/result') || req.url.startsWith('/form')) {
+        next(); // 다음 미들웨어(여기서는 404 처리 미들웨어)로 요청을 전달합니다.
+    } else {
+        // 클라이언트 측 라우팅을 처리할 수 있도록 index.html을 반환합니다.
+        res.sendFile(path.join(__dirname, './project/build/index.html'));
+    }
+});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, "./project/build/index.html"))
+// })
 
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, "publish/nopage.html"))
-})
+
+
+
+
+
+// app.use((req, res) => {
+//     res.status(404).sendFile(path.join(__dirname, "publish/nopage.html"))
+// })
 
 
 
 app.listen(port, () => {
     console.log(`localhost ${port} onload`)
 })
+
 
 // 엔트리포인트  | web.js
 

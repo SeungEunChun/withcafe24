@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+2024.03.12 Scinic react remodeling
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 주 이슈처리 내용들
 
-## Available Scripts
+1. 특정 컴포넌트에서 async로 비동기 함수를 실행하는것이 아닌 최상위 컴포넌트 app.js에서 useEffect로 딱 한번 비동기통신으로 상품의 데이터를 호출. 이후 각각 자식 컴포넌트로 props로 데이터 덩어리를 받아와서 개별적으로 조건을 걸어서 필터링하게 변경
+2. 상품정보 비동기 수행할 get 미들웨어/ 프로모션 컴포넌트에서 사용자가 입력한 정보를 sql 테이블에 insert into~ 구문으로 추가해줄 post 미들웨어 따로 구별
+3.  /detail/ 뒤의 넘버를 id : param으로 받아서 해당 제품이 가지고 있는 PK id 값을 받아와 상세페이지 컴포넌트에게 props로 전달/ 수량 추가/제거 간이 구현
+4.  검색엔진 활성화/검색에 해당하는 라우팅은 post로 요청하여 get 에서 요청했을때 발생하던 데이터 잔여현상을 해결
+5.  app에서 요청할때 /store를 끼고 요청하여 하위 라우터 입장에서는 테이블의 존재유무를 몰랐던게 문제,if/else문을 활용하여 테이블명이 숫자인지 문자인지 헷갈리던 걸 parseInt를 활용하여 문자열을 숫자로 변환/ params를 카테고리 번호의 number로 인식시켜 새로고침하였을때 일어나던 문제 수정
 
-In the project directory, you can run:
 
-### `npm start`
+modules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Frontend =>
+React
+Bootstrap
+Swiper
+SCSS
+React-Router-Dom
+Aos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Backend =>
+Axios
+Express
+Mysql
+Nodejs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+총 작업 기간 2024.01.08 ~ 2024.03.12

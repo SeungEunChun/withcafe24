@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 
 function Scrollimg() {
     useEffect(() => {
@@ -37,9 +38,9 @@ function Scrollimg() {
         <section id='Main_story' className='fadeInDown'>
             {/* 프로모션1단배너 */}
             <div className='main_banner' data-Aos='fade-down'>
-                <a href="#none">
+                <Link to="/brand">
 
-                </a>
+                </Link>
             </div>
         </section>
     )

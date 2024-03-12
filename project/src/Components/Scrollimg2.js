@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 
 function Scrollimg2() {
     useEffect(() => {
@@ -18,7 +19,7 @@ function Scrollimg2() {
 
 
             if (scrollPosition > rect.top + window.scrollY) {
-                Aos.refresh(); // AOS를 새로 고침하여 애니메이션을 시작합니다.
+                Aos.refresh();
             }
         };
 
@@ -33,14 +34,14 @@ function Scrollimg2() {
     return (
         <section id='main_promo' className='d-md-flex'>
             <div className='fadeInRight' data-Aos="fade-right">
-                <a href="#none">
+                <Link to="/product/all">
                     <img src="./assets/aosimg/aos2.jpg" alt="메인배너2" className='img-fluid' />
-                </a>
+                </Link>
             </div>
             <div className='fadeInLeft' data-Aos="fade-left">
-                <a href="#none">
+                <Link to="/product/all">
                     <img src="./assets/aosimg/aos3.jpg" alt="메인배너3" className='img-fluid' />
-                </a>
+                </Link>
             </div>
 
 

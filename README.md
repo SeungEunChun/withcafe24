@@ -21,9 +21,9 @@ Aos
 
 
 Backend =>
+Nodejs
 Axios
 Express
 Mysql
-Nodejs
-
+conqurrently
 총 작업 기간 2024.01.08 ~ 2024.03.12

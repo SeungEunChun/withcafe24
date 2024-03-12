@@ -32,7 +32,9 @@ function Form() {
             return error;
         }
     };
-
+    const thanks = () => {
+        alert("신청이 완료되었습니다!")
+    }
     const [formData, setFormData] = useState({  //input의 name이 곧 변수
         u_name: '',
         u_phone: '',
@@ -61,6 +63,7 @@ function Form() {
             const response = await productApi('myform', formData);
             // 서버 응답 확인
             console.log('서버 응답:', response);
+            alert("신청이 완료되었습니다!")
 
             // 성공적으로 처리된 경우 추가 로직 작성
 
@@ -86,7 +89,7 @@ function Form() {
                                 placeholder='홍길동'
                                 value={formData.u_name}
                                 onChange={handleChange}
-                            />
+                                required />
 
                         </div>
                         <div className='mb-4'>
@@ -99,6 +102,7 @@ function Form() {
                                 placeholder='01012346789'
                                 value={formData.u_phone}
                                 onChange={handleChange}
+                                required
 
 
                             />
@@ -115,6 +119,7 @@ function Form() {
 
                                 value={formData.u_email}
                                 onChange={handleChange}
+                                required
                             />
 
                         </div>
@@ -140,6 +145,7 @@ function Form() {
                                 id="marketing"
                                 value={formData.marketing}
                                 onChange={handleChange}
+                                required
                             />
                             <label htmlFor="marketing">마케팅수신정보동의 </label>
                             <span className='choice'>(선택)</span>

@@ -1,14 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import plusicon from './../img/icon/icon-plus.svg'
+import minusicon from './../img/icon/icon-minus.svg'
+import { Link } from 'react-router-dom';
 function Prodetail(props) {
     const [sale, forSale] = useState(1);
     if (sale === 0) {
         alert("최소수량입니다!");
         forSale(1);
     }
-
+    const thanksbtn = () => {
+        alert("제 포트폴리오를 봐주셔서 감사합니다!")
+    }
     const { id } = useParams();
     console.log(props.datasrc)
     return (
@@ -41,20 +45,28 @@ function Prodetail(props) {
                                         </tbody>
                                     </table>
                                     <div className='mt-5'>
-                                        <div className="quantity">
-                                            <button onClick={() => forSale(sale - 1)}>-</button>
+                                        <span className="quantity">
+                                            <img src={minusicon} alt="minus" onClick={() => forSale(sale - 1)} />
+                                            <input type="text" name="quantity" id="quantity" value={sale} />
+                                            <img src={plusicon} alt="plus" onClick={() => forSale(sale + 1)} />
+                                        </span>
+                                        {/* <div className="quantity">
+                                            <button onClick={() => forSale(sale - 1)}><strong>-</strong></button>
                                             <input type="text" value={sale} />
-                                            <button onClick={() => forSale(sale + 1)}>+</button>
-                                        </div>
+                                            <button onClick={() => forSale(sale + 1)}><strong>+</strong></button>
+                                        </div> */}
 
                                         <div>
                                             <ul className='order'>
-                                                <li>총 수량 :{sale}개</li>
-                                                <li>총 금액 :{e.price * sale}원</li>
+                                                <li>총 수량 : {sale} 개</li>
+                                                <li>총 금액 : {e.price * sale} 원</li>
                                             </ul>
                                         </div>
-                                    </div>
 
+                                    </div>
+                                    <div>
+                                        <span className='buybtn' onClick={thanksbtn}>구매하기</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -65,7 +77,7 @@ function Prodetail(props) {
                         </div>
                         <div className='d-flex justify-content-center mb-5'>
 
-                            <button className='btn-4'>다른제품 보러가기!</button>
+                            <div className='btn-4 text-center more'><Link to="/product/all">다른제품 보러가기!</Link></div>
                         </div>
                     </div>
                 )

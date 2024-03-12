@@ -816,15 +816,48 @@ body.dim:after {
 
 .order {
     margin-top: 100px;
+    padding-left: 0;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+.quantity {
+    border: 1px solid #000;
 }
 
 .quantity input {
-    width: 40px;
-    height: 40px;
+    border: none;
+    width: 50px;
+    text-align: center;
+
 }
 
-.quantity button {
-    width: 30px;
-    height: 30px;
+.quantity img {
+    cursor: pointer;
+    height: 18px;
+    margin-bottom: 4px;
+}
+
+.btn-4.more {
+    cursor: pointer;
+
+    a {
+        color: white;
+    }
+}
+
+.buybtn {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #eef;
+    width: 200px;
+    height: 50px;
+    grid-row-end: 50px;
+    padding-top: 11.5px;
+    background-color: #eef;
 
 }

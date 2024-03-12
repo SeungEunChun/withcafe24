@@ -34,12 +34,12 @@ function Scrollimg2() {
     return (
         <section id='main_promo' className='d-md-flex'>
             <div className='fadeInRight' data-Aos="fade-right">
-                <Link to="/product/all">
+                <Link to="./product/all">
                     <img src="./assets/aosimg/aos2.jpg" alt="메인배너2" className='img-fluid' />
                 </Link>
             </div>
             <div className='fadeInLeft' data-Aos="fade-left">
-                <Link to="/product/all">
+                <Link to="./product/all">
                     <img src="./assets/aosimg/aos3.jpg" alt="메인배너3" className='img-fluid' />
                 </Link>
             </div>

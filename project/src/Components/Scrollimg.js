@@ -38,7 +38,7 @@ function Scrollimg() {
         <section id='Main_story' className='fadeInDown'>
             {/* 프로모션1단배너 */}
             <div className='main_banner' data-Aos='fade-down'>
-                <Link to="/brand">
+                <Link to="./brand">
 
                 </Link>
             </div>

@@ -35,7 +35,7 @@ function Mbenefit() {
         <section id='Member_benefit'>
 
             <div className='mb-5' data-Aos='fade-up'>
-                <Link to="/promotion" className='d-block'>
+                <Link to="./promotion" className='d-block'>
                     <img src="https://i.ibb.co/MNjtZ35/aosm.jpg" alt="benefit" className='img-fluid d-none d-lg-block' />
                     <img src="https://i.ibb.co/Bj4qqLD/m-benefit.jpg" alt="m_benefit" className='img-fluid d-lg-none w-100' />
                 </Link>

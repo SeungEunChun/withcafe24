@@ -27,6 +27,7 @@ function Header(props) {
 
     const scrolldown = () => {
         document.querySelector("#hd").classList = window.scrollY > 0 ? "fixed-top bg-white border-bottom down" : "fixed-top bg-white border-bottom";
+        document.querySelector("#menuicon").classList.remove("on")
 
 
         // document.body.classList = window.scrollY > 0 ? "down " : "";
@@ -39,16 +40,20 @@ function Header(props) {
         });
     };
 
-
-
-    useEffect(() => {
-
+    const menuapp = () => {
         const menuc = document.querySelector("#menuicon")
         menuc.addEventListener("click", (e) => {
 
             e.target.classList.toggle("on")
 
         })
+    }
+
+
+
+    useEffect(() => {
+
+        menuapp();
 
 
         window.addEventListener("scroll", scrolldown)

@@ -10,10 +10,10 @@ function Reviews(props) {
             </div>
 
             <div>
-                <ul className='d-lg-flex row align-items-center'>
+                <ul className='d-flex flex-lg-row flex-column row align-items-center p-0 justify-content-lg-between justify-content-center'>
                     {
                         props.datasrc.map((e, i) => {
-                            return <li className='d-block border mli'>
+                            return <li className='d-block border mli mb-3 mb-lg-0'>
                                 <img src={`/assets/review/${e.reviewimg}`} alt={`review${i}`} className='img-fluid' />
                                 <div className='re_info'>
                                     <strong className='d-block mb-3'>{e.ptitle}</strong>

@@ -15,8 +15,7 @@ function Store(props) {
 
 
     useEffect(() => {
-        console.log("주소창에 있는 넘버", typeof Category_no, Category_no)
-        console.log(props.catesrc, typeof props.catesrc, "app이 전달해준 데이터", props.datasrc)
+
     }, [Category_no, props]);
 
     return (

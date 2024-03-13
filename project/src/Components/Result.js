@@ -8,7 +8,7 @@ function Result() {
 
     const { keyword } = useParams();
     const [remsearch, setRem] = useState([])
-    // console.log(keyword, typeof keyword)
+
 
 
 
@@ -23,7 +23,7 @@ function Result() {
             try {
                 const result = await axios.post(`/result/s/${keyword}`)
                 setRem(result.data)
-                // console.log(result.data)
+
 
             } catch (error) {
                 console.log(error)
@@ -34,9 +34,7 @@ function Result() {
         document.body.classList.remove("dim");
     }, [keyword])
 
-    useEffect(() => {
-        console.log(remsearch)
-    }, [])
+
     return (
 
         <section className='storesec'>

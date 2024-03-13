@@ -20,7 +20,7 @@ function Footer() {
                         E-mail : ngeonhui@sk.com&emsp;&emsp;Privacy Manager : 이하림
                         <br />
                         <br />
-                        <span>Hosting by Cafe24 Corp</span>
+
 
                     </p>
 

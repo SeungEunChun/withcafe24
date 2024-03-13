@@ -47,7 +47,7 @@ function App() {
           ...prestate,
           [t]: [...result.data]
         }));
-        console.log(totalpro)
+
       } catch (error) {
         console.log(error);
       }
@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(totalpro, totalpro && totalpro['Category'] && totalpro['Category'])
+    // console.log(totalpro, totalpro && totalpro['Category'] && totalpro['Category'])
   }, [totalpro])
 
 
@@ -90,11 +90,9 @@ function App() {
 
         </Route>
         <Route path="/result/s/:keyword" element={<Result />}></Route>
-        {/* 주소 경로가 매치되지 않는경우 404페이지 반환 */}
-        {/* <Route path="*" element={"../../publish/nopage.html"} /> */}
 
-        {/* /store 뒤에 인자를 지속적으로 확인하여 json으로 페이지가 보여지는것을 막음   //아직 안됨 */}
-        {/* <Route path="/product/*" element={<StoreRedirect />} /> */}
+
+
       </Routes>
 
       <Footer></Footer>

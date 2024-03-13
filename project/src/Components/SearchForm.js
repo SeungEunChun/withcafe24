@@ -11,7 +11,7 @@ function SearchForm(props) {
 
 
 
-    // console.log(props.datasrc) //props로 전해준 데이터가 잘 왔는지?
+
 
     const handleClick = () => {
         document.body.classList.remove("dim")

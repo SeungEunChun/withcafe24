@@ -14,7 +14,7 @@ function Prodetail(props) {
         alert("제 포트폴리오를 봐주셔서 감사합니다!")
     }
     const { id } = useParams();
-    console.log(props.datasrc)
+
     return (
         <>
             {props.datasrc && props.datasrc.filter(detail => detail.id == id).map((e, i) => {

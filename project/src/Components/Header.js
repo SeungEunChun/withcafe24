@@ -42,10 +42,10 @@ function Header(props) {
 
 
     useEffect(() => {
-        console.log(props)
+
         const menuc = document.querySelector("#menuicon")
         menuc.addEventListener("click", (e) => {
-            console.log(e)//이벤트 자체
+
             e.target.classList.toggle("on")
 
         })
@@ -109,9 +109,9 @@ function Header(props) {
                         </li>
                         <li className='px-4'><Link to="/brand">브랜드</Link></li>
                         <li className='px-4'><Link to="/promotion">프로모션</Link></li>
-                        <li className='px-4'><a href="#none">미디어</a></li>
-                        <li className='px-4'><a href="#none">리뷰</a></li>
-                        <li className='px-4'><a href="#none">커뮤니티</a></li>
+                        <li className='px-4'><a href="https://scinic.com/lookbook.html?cate_no=57">미디어</a></li>
+                        <li className='px-4'><a href="https://scinic.com/board/product/list.html?board_no=4">리뷰</a></li>
+                        <li className='px-4'><a href="https://scinic.com/board/free/list.html?board_no=1">커뮤니티</a></li>
                     </ul>
                     <div className=''>
                         <ul id='Login' className='d-flex position-absolute align-items-center justify-content-center justify-content-lg-end'>

@@ -6,7 +6,7 @@ function Sproduct(props) {
     // const bestpro = Object.keys(props.datasrc['Category'][0])
 
 
-    // console.log(bestpro.length)
+
 
 
     return (

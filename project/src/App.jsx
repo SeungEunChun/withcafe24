@@ -22,7 +22,7 @@ import Store from './Link/Store';
 import SearchForm from './Components/SearchForm'
 import Prodetail from "./Components/prodetail";
 import Result from "./Components/Result";
-
+import Memberjoin from './Components/Memberjoin'
 
 import review from './data/review.json'
 import award from "./data/award.json"
@@ -90,6 +90,7 @@ function App() {
 
         </Route>
         <Route path="/result/s/:keyword" element={<Result />}></Route>
+        <Route path="/join" element={<Memberjoin />}> </Route>
 
 
 
